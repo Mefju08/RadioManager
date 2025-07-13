@@ -8,7 +8,7 @@ Do poprawnego uruchomienia projektu wymagany jest zainstalowany Docker.
 
 1.  **Sklonuj repozytorium:**
     ```bash
-    git clone [https://github.com/Mefju08/RadioManager.git](https://github.com/Mefju08/RadioManager.git)
+    git clone https://github.com/Mefju08/RadioManager.git
     ```
 
 2.  **Uruchom kontenery Dockera:**
