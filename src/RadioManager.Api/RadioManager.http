@@ -1,0 +1,19 @@
+@url = https://localhost:7187/api
+
+POST https://localhost:7187/api/shows
+Content-Type: application/json
+{
+  "presenter": "Pawe³ Nowak",
+  "title": "Druga audycja",
+  "startTime": "2025-12-17T15:00:00Z",
+  "durationMinutes": 20
+}
+###
+
+GET {{url}}/shows/4aa92f41-2946-4dc3-b19b-72139806385d
+###
+
+GET {{url}}/shows?date=2025-10-17
+###
+
+GET {{url}}/shows/daily-reports?date=2025-10-17

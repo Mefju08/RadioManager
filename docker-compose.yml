@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: radiomanager-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - "sqlserver__connectionString=Server=db,1433;Database=radiomanager-db;User Id=sa;Password=yourStrong(!)Password;TrustServerCertificate=True"
+    depends_on:
+      - db
+    networks:
+      - radio-network
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: radiomanager-db
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "yourStrong(!)Password"
+    restart: unless-stopped
+    networks:
+      - radio-network
+    volumes:
+      - sql_data:/var/opt/mssql
+
+volumes:
+  sql_data:
+
+networks:
+  radio-network:
+    driver: bridge
