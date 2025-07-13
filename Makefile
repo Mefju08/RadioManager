@@ -21,7 +21,7 @@ run:
 
 test:
 	@echo "Uruchamianie testów..."
-	dotnet test $(SOLUTION_FILE) --no-build
+	dotnet test $(SOLUTION_FILE)
 
 docker-build:
 	@echo "Budowanie obrazu Docker: $(DOCKER_IMAGE_NAME)..."
