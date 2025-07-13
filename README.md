@@ -44,7 +44,7 @@ curl -X GET http://localhost:8080/api/shows?date=2030-12-17
 ```
 ---
 
-## 📡 Przykładowe Zapytania do API
+## 📡 Struktura
 ```bash
 .
 ├── src/
